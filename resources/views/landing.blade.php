@@ -29,6 +29,14 @@
             top: 0;
             left: 0;
         }
+        .contain {
+            width: 100%;
+            object-fit: contain;
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            max-height: 100%;
+        }
         .right {
             right: 0;
             width: 40%;
@@ -105,10 +113,10 @@
             margin-bottom: 25px;
         }
         .padding {
-            margin: 2%;
+            margin: 0 2%;
             position: relative;
-            width: 94%;
-            height: 94%;
+            width: 96%;
+            height: 100%;
         }
         .alert {
             font-weight: bold;
@@ -116,10 +124,19 @@
             font-size: 14px;
             color: white;
         }
+        @media only screen and (max-width: 680px) {
+            .right, .left {
+                position: relative;
+                width: 100%;
+            }
+            .left {
+                display: none;
+            }
+        }
     </style>
 </head>
 <body>
-    <img class="cover" src="{{ asset('2.jpg') }}" />
+    <img class="cover" src="{{ asset('assets/img/2.jpg') }}" />
     <div class="form">
         <div class="padding">
             <div class="right">
@@ -153,7 +170,7 @@
                 </form>
             </div>
             <div class="left">
-
+                <img class="contain" src="{{ asset('assets/img/1.png') }}" />
             </div>
         </div>
     </div>

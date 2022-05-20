@@ -40,7 +40,8 @@
         .right {
             right: 0;
             width: 40%;
-            height: 100%;
+            /* height: 100%; */
+            /* padding-top: 2%; */
             display: flex;
             justify-content: center;
             align-content: center;
@@ -50,7 +51,7 @@
             max-width: 400px;
         }
         .inner-from {
-            padding: 10%;
+            padding: 5%;
             @if(Session::has('success'))
             background-color: rgba(12, 202, 120, 0.9);
             @else
@@ -111,6 +112,8 @@
             font-weight: bold;
             font-size: 14px;
             margin-bottom: 25px;
+            clear: both;
+
         }
         .padding {
             margin: 0 2%;
@@ -124,6 +127,39 @@
             font-size: 14px;
             color: white;
         }
+        .mobile_container{
+            position: relative;
+            width: 100%;
+            
+            /* display: flex; */
+            /* flex-direction: left; */
+
+        }
+        .mobile_img{
+            width: 60%;
+            float: left;
+            /* height: 100%; */
+            margin:0;
+            height: 100%;
+        }
+        .mobile_contain{
+            width: 100%;
+
+        }
+        .mobile_title {
+            position: absolute;
+            right:15px;
+            top: 90px;
+            width:45%;
+            font-size: 12px;
+            line-height: 3vh;
+            text-align: justify;
+            background-color: rgba(255, 255, 255, 0.5);
+            border-radius: 10px;
+            padding: 2%;
+            font-weight: bold;
+
+        }
         @media only screen and (max-width: 680px) {
             .right, .left {
                 position: relative;
@@ -132,19 +168,54 @@
             .left {
                 display: none;
             }
+            .title{
+                display: none;
+            }
+            .mobile_container{
+                height: 42%;
+            }
+            
+        }
+        @media only screen and (min-width: 680px) {
+            .right{    
+                height: 100%;
+            }
+            .mobile_contain {
+                position: relative;
+                width: 100%;
+            }
+            
+            .mobile_contain {
+                display: none;
+            }
+            .mobile_title{
+                display: none;
+   
+            }
+            
+            
         }
     </style>
 </head>
 <body>
     <img class="cover" src="{{ asset('assets/img/2.jpg') }}" />
-    <div class="form">
-        <div class="padding">
-            <div class="right">
+    <div class="form" >
+        <div class="padding" >
+            <div class="mobile_container" >
+                <div class="mobile_title">
+                    خانواده پل استار از طریق مهارت آموزی و آموزش زبان برنامه نویسی به کودکان و نوجوانان، آنها را در مسیر دستیابی به توانمندی لازم برای موفقیت در زندگی و کار و لذت بردن از آن در قرن حاظر همراهی می کند.
+                </div>
+                <div class="mobile_img">
+                    <img class="mobile_contain" src="{{ asset('assets/img/1.png') }}" />
+                </div>
+            </div>
+            <div class="right" >
                 <form method="POST" action="{{ route('add-user') }}">
                     @csrf
                     <div class="title">
                         خانواده پل استار از طریق مهارت آموزی و آموزش زبان برنامه نویسی به کودکان و نوجوانان، آنها را در مسیر دستیابی به توانمندی لازم برای موفقیت در زندگی و کار و لذت بردن از آن در قرن حاظر همراهی می کند.
                     </div>
+                   
                     <div class="inner-from">
                         @if(Session::has('success'))
                             <div class="alert alert-success">
@@ -172,6 +243,8 @@
             <div class="left">
                 <img class="contain" src="{{ asset('assets/img/1.png') }}" />
             </div>
+
+            
         </div>
     </div>
 </body>

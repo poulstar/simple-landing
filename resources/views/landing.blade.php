@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>پل استار - مشاوره رایگان</title>
+    <link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}">
 
     <style>
         @font-face {
@@ -130,7 +131,7 @@
         .mobile_container{
             position: relative;
             width: 100%;
-            
+
             /* display: flex; */
             /* flex-direction: left; */
 
@@ -174,26 +175,26 @@
             .mobile_container{
                 height: 42%;
             }
-            
+
         }
         @media only screen and (min-width: 680px) {
-            .right{    
+            .right{
                 height: 100%;
             }
             .mobile_contain {
                 position: relative;
                 width: 100%;
             }
-            
+
             .mobile_contain {
                 display: none;
             }
             .mobile_title{
                 display: none;
-   
+
             }
-            
-            
+
+
         }
     </style>
 </head>
@@ -215,7 +216,7 @@
                     <div class="title">
                         خانواده پل استار از طریق مهارت آموزی و آموزش زبان برنامه نویسی به کودکان و نوجوانان، آنها را در مسیر دستیابی به توانمندی لازم برای موفقیت در زندگی و کار و لذت بردن از آن در قرن حاظر همراهی می کند.
                     </div>
-                   
+
                     <div class="inner-from">
                         @if(Session::has('success'))
                             <div class="alert alert-success">
@@ -244,7 +245,7 @@
                 <img class="contain" src="{{ asset('assets/img/1.png') }}" />
             </div>
 
-            
+
         </div>
     </div>
 </body>

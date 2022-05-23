@@ -17,11 +17,12 @@ use App\Http\Controllers\AuthController;
 
 Route::get('/', function () {
     return view('landing');
-});
+})->name('home');
 
 Route::post('/add-user', [MainController::class, 'register'])->name('add-user');
 
 Route::post('login', [AuthController::class, 'login'])->name('login');
+Route::get('logout', [AuthController::class, 'logout'])->name('logout');
 Route::get('login', [AuthController::class, 'loginView']);
 
 Route::get('dashboard', [MainController::class, 'dashboard'])->name('dashboard')->middleware('auth');

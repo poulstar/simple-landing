@@ -34,4 +34,9 @@ class AuthController extends BaseController
 
         return back();
     }
+
+    public function logout() {
+        Auth::logout();
+        return redirect()->route('home');
+    }
 }

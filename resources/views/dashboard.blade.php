@@ -68,5 +68,10 @@
     <div style="height: 40px; overflow: hidden;">
         {{ $registrars->links() }}
     </div>
+    <div>
+        <a href="{{ route('logout') }}">
+            <button>Logout</button>
+        </a>
+    </div>
 </body>
 </html>

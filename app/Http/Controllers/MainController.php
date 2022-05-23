@@ -21,4 +21,12 @@ class MainController extends BaseController
         ]);
         return back()->withSuccess('مشخصات شما ثبت شد. به زودی مشاوران ما با شما تماس خواهند گرفت');
     }
+
+    public function dashboard(Request $request) {
+
+        $registrars = Register::paginate(30);
+        return view('dashboard', [
+            'registrars' => $registrars
+        ]);
+    }
 }
